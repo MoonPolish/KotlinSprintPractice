@@ -2,14 +2,14 @@ package org.example.lesson_3
 
 fun main() {
 
-    var greetings = "Добрый день, "
+    var greetings = "Добрый день"
     var name = "Человек"
 
-    println(greetings + name)
+    println("$greetings, $name")
 
-    greetings = "Добрый вечер, "
+    greetings = "Добрый вечер"
     name = "Люк Скайоукер"
 
-    println(greetings + name)
+    println("$greetings, $name")
 
 }
