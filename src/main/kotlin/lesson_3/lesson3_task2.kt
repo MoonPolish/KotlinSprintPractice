@@ -10,8 +10,6 @@ fun main() {
     println("$surname $name $patronymic $age лет")
 
     surname = "Сидорова"
-    name = "Татьяна"
-    patronymic = "Сергеевна"
     age = 22
 
     println("$surname $name $patronymic $age года")
