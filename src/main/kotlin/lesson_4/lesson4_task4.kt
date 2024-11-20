@@ -5,10 +5,8 @@ const val LEGS_AND_BACK = 0
 
 fun main() {
 
-    val days = 5
-    val sequence = 2
-
-    val everyOtherDay = days % sequence
+    val numberDay = 5
+    val isEven = numberDay % 2
 
     val hands = "Упражнения для рук:"
     val legs = "Упражнения для ног:"
@@ -18,10 +16,10 @@ fun main() {
     val maxLength = maxOf(hands.length, legs.length, back.length, abs.length)
 
     println("""
-        ${hands.padEnd(maxLength)} ${ARMS_AND_ABS == everyOtherDay}
-        ${legs.padEnd(maxLength)} ${LEGS_AND_BACK == everyOtherDay}
-        ${back.padEnd(maxLength)} ${LEGS_AND_BACK == everyOtherDay}
-        ${abs.padEnd(maxLength)} ${ARMS_AND_ABS == everyOtherDay}
+        ${hands.padEnd(maxLength)} ${ARMS_AND_ABS == isEven}
+        ${legs.padEnd(maxLength)} ${LEGS_AND_BACK == isEven}
+        ${back.padEnd(maxLength)} ${LEGS_AND_BACK == isEven}
+        ${abs.padEnd(maxLength)} ${ARMS_AND_ABS == isEven}
     """.trimIndent())
 
 }
