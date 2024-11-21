@@ -1,12 +1,12 @@
 package org.example.lesson_4
 
-const val ARMS_AND_ABS = 1
-const val LEGS_AND_BACK = 0
+const val ARMS_AND_ABS = false
+const val LEGS_AND_BACK = true
 
 fun main() {
 
     val numberDay = 5
-    val isEven = numberDay % 2
+    val isEven = numberDay % 2 == 0
 
     val hands = "Упражнения для рук:"
     val legs = "Упражнения для ног:"
@@ -15,11 +15,13 @@ fun main() {
 
     val maxLength = maxOf(hands.length, legs.length, back.length, abs.length)
 
-    println("""
-        ${hands.padEnd(maxLength)} ${ARMS_AND_ABS == isEven}
+    println(
+        """
+        ${hands.padEnd(maxLength)} ${ARMS_AND_ABS != !isEven}
         ${legs.padEnd(maxLength)} ${LEGS_AND_BACK == isEven}
         ${back.padEnd(maxLength)} ${LEGS_AND_BACK == isEven}
-        ${abs.padEnd(maxLength)} ${ARMS_AND_ABS == isEven}
-    """.trimIndent())
+        ${abs.padEnd(maxLength)} ${ARMS_AND_ABS != !isEven}
+    """.trimIndent()
+    )
 
 }
