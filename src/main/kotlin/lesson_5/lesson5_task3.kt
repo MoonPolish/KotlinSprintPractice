@@ -19,5 +19,4 @@ fun main() {
         else if (firstNumber == lotteryNumber1 || secondNumber == lotteryNumber2) "Вы выиграли утешительный приз!"
         else "Неудача!"
     println(resultText)
-
 }
