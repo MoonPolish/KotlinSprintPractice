@@ -19,14 +19,16 @@ fun main() {
     val inputLogin = readln()
     val inputPassword = readln()
 
-    androidMarvin = if (inputLogin == LOGIN && inputPassword == PASSWORD) {
+    androidMarvin = if (inputLogin == LOGIN) {
+        inputPassword
+    } else if (inputPassword == PASSWORD) {
         """
-            [вздыхает...] Ваши данные проверены, и о, чудо, они верны... Пользователь "Zaphod", вам разрешено входить 
-            на борт корабля "Heart of Gold". Хотя мне всё равно... Ну вперед, войдите... Если вам так уж надо, в конце 
+            [вздыхает...] Ваши данные проверены, и о, чудо, они верны... Пользователь "$LOGIN", вам разрешено входить 
+            на борт корабля "$SHIP_NAME". Хотя мне всё равно... Ну вперед, войдите... Если вам так уж надо, в конце 
             концов... [меланхолический вздох...] Надеюсь, вам понравится пребывание здесь больше, чем мне.
         """.trimIndent()
     } else {
-        "Предложить пользователю регистрацию."
+        "Предложить пользователю $inputLogin регистрацию."
     }
 
     println(androidMarvin)
