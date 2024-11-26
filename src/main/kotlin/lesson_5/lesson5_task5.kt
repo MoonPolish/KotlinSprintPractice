@@ -32,6 +32,6 @@ fun main() {
         else -> "Вы не отгадали ни одного числа."
     }
 
-    println(resultText + intersection)
+    println("$resultText Выигрышные числа: $randomLotteryNumbers")
 
 }
