@@ -13,7 +13,8 @@ fun main() {
         val inputNumber = readln().toInt()
 
         if (inputNumber == 0 || inputNumber < 1 || inputNumber > 9) {
-            val numbers = 1..10; if (inputNumber in numbers) {
+            val numbers = 1..10
+            if (inputNumber in numbers) {
             }
             println("Пожалуйста, введите целое число от 1 до 9.")
             continue
