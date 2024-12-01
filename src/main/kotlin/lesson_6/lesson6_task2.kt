@@ -3,12 +3,9 @@ package org.example.lesson_6
 fun main() {
 
     println("Введите количество секунд, которые Вы хотите засечь:")
-    val secondsInput = readln().toInt()
-    var seconds = secondsInput
+    val secondsInput = readln().toLong()
 
-    while (seconds > 0) {
-        Thread.sleep(1000)
-        seconds--
-    }
+    Thread.sleep(1000 * secondsInput)
+
     println("Прошло $secondsInput секунд(ы).")
 }
