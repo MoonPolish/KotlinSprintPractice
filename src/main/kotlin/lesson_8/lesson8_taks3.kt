@@ -9,5 +9,4 @@ fun main() {
 
     if (ingridients.contains(inputIngridient)) println("Ингредиент [$inputIngridient] в рецепте есть.")
     else println("Такого ингредиента в рецепте нет.")
-
 }
