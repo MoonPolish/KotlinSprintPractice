@@ -3,7 +3,7 @@ package org.example.lesson_8
 fun main() {
 
     val ingridients = arrayOf("яйцо", "помидор", "зелень", "соль", "перец")
-    println(ingridients)
+    println(ingridients.joinToString(", "))
 
     println("Введите ингридиент, который Вы хотели бы заменить: ")
     val inputIngridient = readln()
