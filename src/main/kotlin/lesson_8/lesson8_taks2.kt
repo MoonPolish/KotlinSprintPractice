@@ -10,8 +10,8 @@ fun main() {
     for (ingridient in ingridients) {
         if (ingridient == inputIngridient) {
             println("Ингредиент [$inputIngridient] в рецепте есть.")
+            return
         }
-        println("Такого ингредиента в рецепте нет.")
-        return
     }
+    println("Такого ингредиента в рецепте нет.")
 }
