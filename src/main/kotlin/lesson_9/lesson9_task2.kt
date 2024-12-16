@@ -17,6 +17,6 @@ fun main() {
         println("Какой ингридиент вы хотите добавить?")
         val inputIngridient = readln()
         ingridients.add(inputIngridient)
-    } else return
-    println("Теперь в рецепте есть следующие ингредиенты: $ingridients")
+        println("Теперь в рецепте есть следующие ингредиенты: $ingridients")
+    } else println("Ответ не распознан.")
 }
