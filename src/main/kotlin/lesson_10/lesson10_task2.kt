@@ -1,23 +1,26 @@
 package org.example.lesson_10
 
+const val MIN_LENGTH = 4
+
 fun main() {
 
     println("Введите логин: ")
     val login = readln()
-    checkLength(login)
+    validateLength(login)
 
     println("Введите пароль: ")
     val password = readln()
-    checkLength(password)
+    validateLength(password)
 
-    println(checkLength(login))
-    println(checkLength(password))
-}
-
-fun checkLength(lengths: String) {
-    return if (lengths.length >= 4) {
-        println()
+    if (validateLength(login) && validateLength(password)) {
+        println("Добро пожаловать!")
     } else {
         println("Логин или пароль недостаточно длинные.")
     }
+
+}
+
+fun validateLength(lengths: String): Boolean {
+    return (lengths.length >= MIN_LENGTH)
+
 }
