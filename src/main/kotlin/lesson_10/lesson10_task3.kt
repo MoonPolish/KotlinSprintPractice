@@ -3,8 +3,7 @@ package org.example.lesson_10
 fun generatePassword(lenthg: Int): String {
 
     val digits = ('0'..'9').toList()
-    val specialCharacters = listOf(
-        *('!'..'/').toList().toTypedArray(), ' ')
+    val specialCharacters = listOf(' '..'/')
     val passwordBuilder = StringBuilder()
 
     for (i in 0 until lenthg) {
