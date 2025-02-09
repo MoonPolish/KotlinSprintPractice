@@ -4,6 +4,7 @@ fun generatePassword(lenthg: Int): String {
 
     val digits = ('0'..'9').toList()
     val specialCharacters = listOf(' '..'/')
+
     val passwordBuilder = StringBuilder()
 
     for (i in 0 until lenthg) {
