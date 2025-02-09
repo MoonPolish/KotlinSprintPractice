@@ -1,22 +1,30 @@
 package org.example.lesson_10
 
+import kotlin.random.Random
+
 const val VALID_LOGIN = "User"
 const val VALID_PASSWORD = "Password"
 
-var accessToken: String? = null
+var token: String? = null
 
-val shoppingCart = listOf("мазек", "кукурука", "тунес")
+val shoppingCart = mutableListOf("мазек", "кукурука", "тунес")
+
+fun generateRandomToken(length: Int): String {
+    val characters = ('A'..'Z') + ('a'..'z') + ('0'..'9')
+    return (1..length).joinToString("") { characters[Random.nextInt(characters.size)].toString() }
+}
 
 fun authorize(username: String, password: String): String? {
     return if (username == VALID_LOGIN && password == VALID_PASSWORD) {
-        "token12345"
+        token = generateRandomToken(32)
+        token
     } else {
         null
     }
 }
 
-fun getShoppingCart(token: String?): List<String>? {
-    return if (token == accessToken) {
+fun getShoppingCart(token: String?): MutableList<String>? {
+    return if (token != null) {
         shoppingCart
     } else {
         null
@@ -25,14 +33,16 @@ fun getShoppingCart(token: String?): List<String>? {
 
 fun main() {
 
-    val username = "User"
-    val password = "Password"
+    println("Введите логин и пароль:")
 
-    accessToken = authorize(username, password)
+    val username = readln()
+    val password = readln()
 
-    val cartItems = getShoppingCart(accessToken)
+    val accessToken = authorize(username, password)
 
-    if (cartItems != null) {
+    if (accessToken != null) {
+        println("Авторизация успешна. Токен: $accessToken")
+        val shoppingCart = getShoppingCart(accessToken)
         println("Содержимое корзины: $shoppingCart")
     } else {
         println("Неудачная авторизация. Проверьте логин или пароль.")
