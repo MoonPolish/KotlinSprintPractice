@@ -23,7 +23,7 @@ fun authorize(username: String, password: String): String? {
     }
 }
 
-fun getShoppingCart(token: String?): MutableList<String>? {
+fun getShoppingCart(token: String): MutableList<String>? {
     return if (token != null) {
         shoppingCart
     } else {
@@ -41,7 +41,7 @@ fun main() {
     val accessToken = authorize(username, password)
 
     if (accessToken != null) {
-        println("Авторизация успешна. Токен: $accessToken")
+        println("Авторизация успешна.")
         val shoppingCart = getShoppingCart(accessToken)
         println("Содержимое корзины: $shoppingCart")
     } else {
