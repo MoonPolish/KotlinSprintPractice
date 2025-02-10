@@ -1,5 +1,6 @@
 package org.example.lesson_11
 
+
 fun main() {
     val user = User2(
         username = "username",
