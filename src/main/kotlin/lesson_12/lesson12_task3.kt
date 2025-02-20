@@ -7,13 +7,13 @@ class WeatherData2(
     _nightTemperature: Int,
     _hasPrecipitation: Boolean,
 ) {
-    var dayTemperature = _dayTemperature
-    var nightTemperature = _nightTemperature
-    var hasPrecipitation = _hasPrecipitation
+    val dayTemperature = (_dayTemperature - KELVIN).toInt()
+    val nightTemperature = (_nightTemperature - KELVIN).toInt()
+    val hasPrecipitation = _hasPrecipitation
 
     fun displayWeather() {
-        println("Дневная температура: ${dayTemperature - KELVIN}°C")
-        println("Ночная температура: ${nightTemperature - KELVIN}°C")
+        println("Дневная температура: $dayTemperature°C")
+        println("Ночная температура: $nightTemperature°C")
         println("Наличие осадков: ${if (hasPrecipitation) "Да" else "Нет"}")
     }
 }
