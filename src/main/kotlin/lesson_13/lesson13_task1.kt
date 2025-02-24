@@ -3,10 +3,8 @@ package org.example.lesson_13
 class PhoneDirectory(
     val name: String,
     val phoneNumber: Long,
-    val company: String? = null,
-) {
-
-}
+    val company: String?,
+)
 
 fun main() {
     val phoneDirectory1 = PhoneDirectory(
@@ -18,7 +16,7 @@ fun main() {
     val phoneDirectory2 = PhoneDirectory(
         "Владислав",
         79156541234L,
-
+        null,
         )
 
     println(phoneDirectory1.company)
