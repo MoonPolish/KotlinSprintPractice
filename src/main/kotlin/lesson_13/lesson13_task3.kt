@@ -3,14 +3,27 @@ package org.example.lesson_13
 class PhoneDirectory2(
     val name: String,
     val phoneNumber: Long,
-    val company: List<String?> = listOf(null, null, "null", "ООО РОГА И КОПЫТА", "ООО РОМАШКА"),
+    val companies: List<String?>,
 )
 
-fun main() {
-    val phoneDirectory1 = PhoneDirectory2(
-        "Petr",
-        79251234565L
-    )
-    println(phoneDirectory1.company)
-
+fun displayInfo() {
+    val filteredCompanies = phoneDirectory2.companies.mapNotNull { company ->
+        when (company) {
+            null -> null
+            else -> company
+        }
+    }
+    println(filteredCompanies)
 }
+
+val phoneDirectory2 = PhoneDirectory2(
+    "Petr",
+    79251234565L,
+    listOf(null, null, "null", "ООО РОГА И КОПЫТА", "ООО РОМАШКА"),
+)
+
+
+fun main() {
+    println(displayInfo())
+}
+
