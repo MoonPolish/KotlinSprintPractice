@@ -47,5 +47,4 @@ fun main() {
     cargo.displayInfo()
     println()
     icebreaker.displayInfo()
-
 }
